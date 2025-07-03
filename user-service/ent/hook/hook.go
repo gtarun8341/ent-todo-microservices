@@ -4,9 +4,8 @@ package hook
 
 import (
 	"context"
+	"ent-todo-microservices/user-service/ent"
 	"fmt"
-
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent"
 )
 
 // The SessionFunc type is an adapter to allow the use of ordinary

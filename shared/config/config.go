@@ -1,5 +1,5 @@
 package config
 
 const (
-	DB_DSN = "host=localhost user=postgres password=postgres dbname=todo_go_ent port=5432 sslmode=disable"
+	DB_DSN = "host=localhost user=prashanthalaki dbname=todo_dev port=5432 sslmode=disable"
 )

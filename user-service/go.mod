@@ -1,4 +1,4 @@
-module github.com/gtarun8341/ent-todo-microservices/user-service
+module ent-todo-microservices/user-service
 
 go 1.24.4
 

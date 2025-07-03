@@ -4,6 +4,9 @@ package ent
 
 import (
 	"context"
+	"ent-todo-microservices/user-service/ent/predicate"
+	"ent-todo-microservices/user-service/ent/session"
+	"ent-todo-microservices/user-service/ent/user"
 	"fmt"
 	"math"
 
@@ -12,9 +15,6 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/predicate"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 // SessionQuery is the builder for querying Session entities.

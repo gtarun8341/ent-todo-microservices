@@ -1,8 +1,9 @@
 package router
 
 import (
+	"ent-todo-microservices/api-gateway/handlers"
+
 	"github.com/gin-gonic/gin"
-	"github.com/gtarun8341/ent-todo-microservices/api-gateway/handlers"
 )
 
 func RegisterUserRoutes(r *gin.Engine) {

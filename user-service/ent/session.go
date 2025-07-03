@@ -3,14 +3,14 @@
 package ent
 
 import (
+	"ent-todo-microservices/user-service/ent/session"
+	"ent-todo-microservices/user-service/ent/user"
 	"fmt"
 	"strings"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 // Session is the model entity for the Session schema.

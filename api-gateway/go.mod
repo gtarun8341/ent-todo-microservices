@@ -1,4 +1,4 @@
-module github.com/gtarun8341/ent-todo-microservices/api-gateway
+module ent-todo-microservices/api-gateway
 
 go 1.24.4
 

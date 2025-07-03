@@ -4,14 +4,14 @@ package ent
 
 import (
 	"context"
+	"ent-todo-microservices/user-service/ent/session"
+	"ent-todo-microservices/user-service/ent/user"
 	"errors"
 	"fmt"
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 // UserCreate is the builder for creating a User entity.
@@ -34,8 +34,8 @@ func (uc *UserCreate) SetEmail(s string) *UserCreate {
 }
 
 // SetPassword sets the "password" field.
-func (uc *UserCreate) SetPassword(i int64) *UserCreate {
-	uc.mutation.SetPassword(i)
+func (uc *UserCreate) SetPassword(s string) *UserCreate {
+	uc.mutation.SetPassword(s)
 	return uc
 }
 
@@ -164,7 +164,7 @@ func (uc *UserCreate) createSpec() (*User, *sqlgraph.CreateSpec) {
 		_node.Email = value
 	}
 	if value, ok := uc.mutation.Password(); ok {
-		_spec.SetField(user.FieldPassword, field.TypeInt64, value)
+		_spec.SetField(user.FieldPassword, field.TypeString, value)
 		_node.Password = value
 	}
 	if nodes := uc.mutation.SessionsIDs(); len(nodes) > 0 {

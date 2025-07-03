@@ -1,9 +1,10 @@
 package router
 
 import (
+	"ent-todo-microservices/user-service/ent"
+	"ent-todo-microservices/user-service/handlers" // Assuming the correct import path for your handlers
+
 	"github.com/gin-gonic/gin"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/handlers" // Assuming the correct import path for your handlers
 )
 
 func SetupRouter(client ent.Client) *gin.Engine {

@@ -4,6 +4,9 @@ package ent
 
 import (
 	"context"
+	"ent-todo-microservices/user-service/ent/predicate"
+	"ent-todo-microservices/user-service/ent/session"
+	"ent-todo-microservices/user-service/ent/user"
 	"errors"
 	"fmt"
 	"sync"
@@ -11,9 +14,6 @@ import (
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/predicate"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 const (
@@ -520,8 +520,7 @@ type UserMutation struct {
 	id              *uuid.UUID
 	name            *string
 	email           *string
-	password        *int64
-	addpassword     *int64
+	password        *string
 	clearedFields   map[string]struct{}
 	sessions        map[int]struct{}
 	removedsessions map[int]struct{}
@@ -708,13 +707,12 @@ func (m *UserMutation) ResetEmail() {
 }
 
 // SetPassword sets the "password" field.
-func (m *UserMutation) SetPassword(i int64) {
-	m.password = &i
-	m.addpassword = nil
+func (m *UserMutation) SetPassword(s string) {
+	m.password = &s
 }
 
 // Password returns the value of the "password" field in the mutation.
-func (m *UserMutation) Password() (r int64, exists bool) {
+func (m *UserMutation) Password() (r string, exists bool) {
 	v := m.password
 	if v == nil {
 		return
@@ -725,7 +723,7 @@ func (m *UserMutation) Password() (r int64, exists bool) {
 // OldPassword returns the old "password" field's value of the User entity.
 // If the User object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
-func (m *UserMutation) OldPassword(ctx context.Context) (v int64, err error) {
+func (m *UserMutation) OldPassword(ctx context.Context) (v string, err error) {
 	if !m.op.Is(OpUpdateOne) {
 		return v, errors.New("OldPassword is only allowed on UpdateOne operations")
 	}
@@ -739,28 +737,9 @@ func (m *UserMutation) OldPassword(ctx context.Context) (v int64, err error) {
 	return oldValue.Password, nil
 }
 
-// AddPassword adds i to the "password" field.
-func (m *UserMutation) AddPassword(i int64) {
-	if m.addpassword != nil {
-		*m.addpassword += i
-	} else {
-		m.addpassword = &i
-	}
-}
-
-// AddedPassword returns the value that was added to the "password" field in this mutation.
-func (m *UserMutation) AddedPassword() (r int64, exists bool) {
-	v := m.addpassword
-	if v == nil {
-		return
-	}
-	return *v, true
-}
-
 // ResetPassword resets all changes to the "password" field.
 func (m *UserMutation) ResetPassword() {
 	m.password = nil
-	m.addpassword = nil
 }
 
 // AddSessionIDs adds the "sessions" edge to the Session entity by ids.
@@ -914,7 +893,7 @@ func (m *UserMutation) SetField(name string, value ent.Value) error {
 		m.SetEmail(v)
 		return nil
 	case user.FieldPassword:
-		v, ok := value.(int64)
+		v, ok := value.(string)
 		if !ok {
 			return fmt.Errorf("unexpected type %T for field %s", value, name)
 		}
@@ -927,21 +906,13 @@ func (m *UserMutation) SetField(name string, value ent.Value) error {
 // AddedFields returns all numeric fields that were incremented/decremented during
 // this mutation.
 func (m *UserMutation) AddedFields() []string {
-	var fields []string
-	if m.addpassword != nil {
-		fields = append(fields, user.FieldPassword)
-	}
-	return fields
+	return nil
 }
 
 // AddedField returns the numeric value that was incremented/decremented on a field
 // with the given name. The second boolean return value indicates that this field
 // was not set, or was not defined in the schema.
 func (m *UserMutation) AddedField(name string) (ent.Value, bool) {
-	switch name {
-	case user.FieldPassword:
-		return m.AddedPassword()
-	}
 	return nil, false
 }
 
@@ -950,13 +921,6 @@ func (m *UserMutation) AddedField(name string) (ent.Value, bool) {
 // type.
 func (m *UserMutation) AddField(name string, value ent.Value) error {
 	switch name {
-	case user.FieldPassword:
-		v, ok := value.(int64)
-		if !ok {
-			return fmt.Errorf("unexpected type %T for field %s", value, name)
-		}
-		m.AddPassword(v)
-		return nil
 	}
 	return fmt.Errorf("unknown User numeric field %s", name)
 }

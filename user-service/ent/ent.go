@@ -4,6 +4,8 @@ package ent
 
 import (
 	"context"
+	"ent-todo-microservices/user-service/ent/session"
+	"ent-todo-microservices/user-service/ent/user"
 	"errors"
 	"fmt"
 	"reflect"
@@ -12,8 +14,6 @@ import (
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 // ent aliases to avoid import conflicts in user's code.

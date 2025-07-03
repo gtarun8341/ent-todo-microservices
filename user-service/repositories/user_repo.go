@@ -7,10 +7,11 @@ import (
 	"log"
 	"time"
 
+	"ent-todo-microservices/user-service/ent"
+	"ent-todo-microservices/user-service/ent/session"
+	"ent-todo-microservices/user-service/ent/user"
+
 	"github.com/google/uuid"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
-	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 	"golang.org/x/crypto/bcrypt"
 )
 
