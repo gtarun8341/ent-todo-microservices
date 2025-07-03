@@ -1,0 +1,18 @@
+package main
+
+import (
+	"log"
+
+	"github.com/gtarun8341/ent-go-todo/api-gateway/router"
+)
+
+
+func main() {
+	r := router.SetupRouter()
+
+	log.Println("API Gateway starting on :8000")
+	if err := r.Run(":8000"); err != nil {
+		log.Fatalf("Failed to run API Gateway: %v", err)
+	}
+}
+
