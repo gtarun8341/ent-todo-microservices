@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/gtarun8341/ent-go-todo/api-gateway/router"
+	"github.com/gtarun8341/ent-todo-microservices/api-gateway/router"
 )
 
 

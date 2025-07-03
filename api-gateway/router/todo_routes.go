@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	middleware "github.com/gtarun8341/ent-go-todo/api-gateway/auth"
-	"github.com/gtarun8341/ent-go-todo/api-gateway/handlers"
+	middleware "github.com/gtarun8341/ent-todo-microservices/api-gateway/auth"
+	"github.com/gtarun8341/ent-todo-microservices/api-gateway/handlers"
 )
 
 func RegisterTodoRoutes(r *gin.Engine) {

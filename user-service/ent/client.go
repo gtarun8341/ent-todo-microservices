@@ -10,14 +10,14 @@ import (
 	"reflect"
 
 	"github.com/google/uuid"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/migrate"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/migrate"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/session"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/user"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 // Client is the client that holds all ent builders.

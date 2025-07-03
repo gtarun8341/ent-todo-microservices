@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/gtarun8341/ent-go-todo/user-service/db"
-	"github.com/gtarun8341/ent-go-todo/user-service/router"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/db"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/router"
 )
 
 func main() {

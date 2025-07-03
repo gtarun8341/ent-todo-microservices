@@ -10,8 +10,8 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/session"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/user"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 // SessionCreate is the builder for creating a Session entity.

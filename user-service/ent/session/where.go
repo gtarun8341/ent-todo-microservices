@@ -5,7 +5,7 @@ package session
 import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/predicate"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/predicate"
 )
 
 // ID filters vertices based on their ID field.

@@ -11,9 +11,9 @@ import (
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/predicate"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/session"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/user"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/predicate"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 const (

@@ -5,12 +5,12 @@ package enttest
 import (
 	"context"
 
-	"github.com/gtarun8341/ent-go-todo/user-service/ent"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent"
 	// required by schema hooks.
-	_ "github.com/gtarun8341/ent-go-todo/user-service/ent/runtime"
+	_ "github.com/gtarun8341/ent-todo-microservices/user-service/ent/runtime"
 
 	"entgo.io/ent/dialect/sql/schema"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/migrate"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/migrate"
 )
 
 type (

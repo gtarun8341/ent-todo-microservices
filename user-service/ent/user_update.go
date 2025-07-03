@@ -10,9 +10,9 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/predicate"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/session"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/user"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/predicate"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/session"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 // UserUpdate is the builder for updating User entities.

@@ -4,17 +4,17 @@ import (
 	"context"
 	"log"
 
-	"github.com/gtarun8341/ent-go-todo/shared/config"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent"
+	"github.com/gtarun8341/ent-todo-microservices/shared/config"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent"
 	_ "github.com/lib/pq"
 )
 
 func InitENT() *ent.Client{
 	log.Println("Connecting to database...")
 
-	client, err := ent.Open("postgres",config.DB_DSN)
-	if err != nil{
-		log.Fatal("failed to connect db",err)
+	client, err := ent.Open("postgres", config.DB_DSN)
+	if err != nil {
+		log.Fatal("failed to connect db", err)
 	}
 	log.Println("Successfully connected to database.")
 

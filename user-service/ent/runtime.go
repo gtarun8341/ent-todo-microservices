@@ -5,8 +5,8 @@ package ent
 
 import (
 	"github.com/google/uuid"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/schema"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent/user"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/schema"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent/user"
 )
 
 // The init function reads all schema descriptors with runtime code

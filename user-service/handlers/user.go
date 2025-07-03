@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/gtarun8341/ent-go-todo/user-service/ent"
-	"github.com/gtarun8341/ent-go-todo/user-service/repositories"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/ent"
+	"github.com/gtarun8341/ent-todo-microservices/user-service/repositories"
 )
 
 func Status(c *gin.Context){

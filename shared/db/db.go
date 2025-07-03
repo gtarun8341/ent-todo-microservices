@@ -5,7 +5,7 @@ package db
 // 	"log"
 
 // 	"entgo.io/ent/dialect"
-// 	"github.com/gtarun8341/ent-go-todog68/shared/config"
+// 	"github.com/gtarun8341/ent-todo-microservicesg68/shared/config"
 // )
 
 // func InitENT() *models.client{
